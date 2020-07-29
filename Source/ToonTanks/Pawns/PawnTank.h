@@ -45,6 +45,8 @@ class TOONTANKS_API APawnTank : public APawnBase
 		FVector MoveDirection;
 		FQuat RotationDirection;
 
+		APlayerController* PlayerControllerRef;
+
 		void CalculateMoveInput(float Value);
 		void CalculateRotateInput(float Value);
 
@@ -58,5 +60,7 @@ class TOONTANKS_API APawnTank : public APawnBase
 	protected:
 		// Called when the game starts or when spawned
 		virtual void BeginPlay() override;
+
+		virtual void HandleDestruction() override;
 
 };
